@@ -9,12 +9,12 @@ export default class Board {
 
     render(svg) {
 
-		let rect = document.createElementNS(SVG_NS, 'rect');
-		rect.setAttributeNS(null, 'width', this.width);
+        let rect = document.createElementNS(SVG_NS, 'rect');
+        rect.setAttributeNS(null, 'width', this.width);
         rect.setAttributeNS(null, 'height', this.height);
         rect.setAttributeNS(null, 'fill', '#353535');
         svg.appendChild(rect);
-        
+
         let line = document.createElementNS(SVG_NS, 'line');
         line.setAttributeNS(null, 'x1', '256');
         line.setAttributeNS(null, 'y1', '256');
@@ -22,8 +22,9 @@ export default class Board {
         line.setAttributeNS(null, 'y2', '0');
         line.setAttributeNS(null, 'stroke', 'white');
         line.setAttributeNS(null, 'stroke-width', '3');
-        line.setAttributeNS(null, 'stroke-dasharray', '5, 5')
+        line.setAttributeNS(null, 'stroke-dasharray', '5, 5');
         svg.appendChild(line);
+
     }
 
 }
