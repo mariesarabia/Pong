@@ -6,6 +6,7 @@ export default class Ball {
     this.boardWidth = boardWidth;
     this.boardHeight = boardHeight;
     this.direction = 1;
+    this.ping = new Audio('public/sounds/pong-01.wav');
     this.reset();
     this
   }
@@ -23,14 +24,18 @@ export default class Ball {
     this.vx = this.direction * (6 - Math.abs(this.vy));
   }
 
-  wallCollision() {
+  wallCollision(player1, player2) {
     const hitLeft = this.x - this.radius <= 0;
     const hitRight = this.x + this.radius >= this.boardWidth;
     const hitTop = this.y - this.radius <= 0;
     const hitBottom = this.y + this.radius >= this.boardHeight;
 
-    if (hitLeft || hitRight) {
-      this.vx = -this.vx
+    if (hitLeft) {
+      this.goal(player2);
+      //this.vx = -this.vx;
+
+    } else if (hitRight) {
+      this.goal(player1);
     } else if (hitTop || hitBottom) {
       this.vy = -this.vy
     }
@@ -50,6 +55,7 @@ export default class Ball {
         && this.y <= bottomY
       ) {
         this.vx = -this.vx;
+        this.ping.play();
       }
 
 
@@ -64,6 +70,7 @@ export default class Ball {
         && this.y <= bottomY
       ) {
         this.vx = -this.vx;
+        this.ping.play();
       }
     }
   }
@@ -77,8 +84,9 @@ export default class Ball {
     this.x += this.vx;
     this.y += this.vy;
 
-    this.wallCollision();
+    this.wallCollision(player1, player2);
     this.paddleCollision(player1, player2);
+
 
     //detect the score 
     //if the right wall was touched, increment player 1 score (and give advantage)
