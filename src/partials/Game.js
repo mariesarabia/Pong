@@ -30,19 +30,31 @@ export default class Game {
 			this.height,
 			this.paddleWidth,
 			this.paddleHeight,
-			this.width - this.boardGap - this.paddleWidth, 
+			this.width - this.boardGap - this.paddleWidth,
 			(this.height - this.paddleHeight) / 2,
 			KEYS.up,
 			KEYS.down
 		);
 		this.ball = new Ball(
-			this.radius, 
-			this.width, 
+			this.radius,
+			this.width,
 			this.height
 		);
+
+		document.addEventListener('keydown', event => {
+			switch (event.key) {
+				case KEYS.spaceBar:
+					this.pause = !this.pause;
+					break;
+			}
+		});
 	}
 
 	render() {
+		if (this.pause) {
+			return;
+		}
+
 		this.gameElement.innerHTML = '';
 
 		let svg = document.createElementNS(SVG_NS, 'svg');
