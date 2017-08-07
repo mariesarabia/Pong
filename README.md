@@ -1,27 +1,20 @@
-# Pong Game
+PONG GAME 
 
-A basic pong game using SVGs.
+A game inspired by Pong, one of the earliest arcade video games. Two paddles represent two players on a board. The up/down and a/z keypress move the paddles vertically along the left and along the right sides of the board. The object of the game is to hit the ball with one's paddle and send it back to the opposing side. A score is generated when the other player fails to return the ball to the other side and so the ball exits the board. 
 
-## Setup
+TECHNOLOGIES USED: 
 
-**Install dependencies:**
+HTML
+CSS
+Javascript
+Webpack as bundler
 
-`> npm i`
+In this project I learned the use of SVG to render the game with a board, paddle and ball. 
 
-**Run locally with Webpack Dev Server:**
+- The use of default import and export 
 
-`> npm start`
+- Constructor class and methods
 
-**Build for production:**
+- Instatiating new objects using New 
 
-`> npm run build`
-
-## Keys
-
-**Player 1:**
-* a: up
-* z: down
-
-**Player 2:**
-* ▲ : up
-* ▼: down
+- Writing javascript in an object-oriented style using classes
