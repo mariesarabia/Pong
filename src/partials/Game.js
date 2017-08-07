@@ -1,8 +1,8 @@
 import { SVG_NS, KEYS } from '../settings';
-import Board from './board';
-import Paddle from './paddle';
-import Ball from './ball';
-import Score from './score';
+import Board from './Board';
+import Paddle from './Paddle';
+import Ball from './Ball';
+import Score from './Score';
 
 export default class Game {
 
@@ -41,8 +41,15 @@ export default class Game {
 			this.width,
 			this.height
 		);
+		//stretch
+		this.ball2 = new Ball(
+			this.radius,
+			this.width,
+			this.height
+		);
+		//stretch
 
-		this.score1 = new Score(this.width / 2 - 50, 30, 30);
+		this.score1 = new Score(this.width / 2 - 60, 30, 30);
 
 		this.score2 = new Score(this.width / 2 + 30, 30, 30);
 
@@ -73,6 +80,9 @@ export default class Game {
 		this.player1.render(svg);
 		this.player2.render(svg);
 		this.ball.render(svg, this.player1, this.player2);
+		//stretch 
+		this.ball2.render(svg, this.player1, this.player2);
+		//stretch
 		this.score1.render(svg, this.player1.score);
 		this.score2.render(svg, this.player2.score);
 	}

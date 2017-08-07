@@ -44,7 +44,6 @@ export default class Ball {
   paddleCollision(player1, player2) {
     if (this.vx > 0) {
 
-      // detecting player 2 paddle collision
       let paddle = player2.coordinates(player2.x, player2.y, player2.width, player2.height);
 
       let [leftX, rightX, topY, bottomY] = paddle;
@@ -76,7 +75,7 @@ export default class Ball {
   }
 
   goal(player) {
-    player.score++; //increment winning player score
+    player.score++;
     this.reset();
   }
 
@@ -86,11 +85,6 @@ export default class Ball {
 
     this.wallCollision(player1, player2);
     this.paddleCollision(player1, player2);
-
-
-    //detect the score 
-    //if the right wall was touched, increment player 1 score (and give advantage)
-    //else the left wall was touched, increment player 2 score (and give advantage)
 
     let circle = document.createElementNS(SVG_NS, 'circle');
     circle.setAttributeNS(null, 'r', this.radius);
