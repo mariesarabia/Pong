@@ -51,7 +51,7 @@ export default class Game {
 
 		this.score1 = new Score(this.width / 2 - 60, 30, 30);
 
-		this.score2 = new Score(this.width / 2 + 30, 30, 30);
+		this.score2 = new Score(this.width / 2 + 20, 30, 30);
 
 
 		document.addEventListener('keydown', event => {

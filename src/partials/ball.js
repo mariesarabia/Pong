@@ -88,7 +88,7 @@ export default class Ball {
 
     let circle = document.createElementNS(SVG_NS, 'circle');
     circle.setAttributeNS(null, 'r', this.radius);
-    circle.setAttributeNS(null, 'fill', '#fff');
+    circle.setAttributeNS(null, 'fill', '#F5DB0A');
     circle.setAttributeNS(null, 'cx', this.x);
     circle.setAttributeNS(null, 'cy', this.y);
     svg.appendChild(circle);
