@@ -17,8 +17,6 @@ export default class Game {
 
 		this.radius = 8;
 
-		// this.points = 60, 30, 90, 90, 30, 90;
-
 		this.board = new Board(
 			this.width,
 			this.height);
@@ -32,6 +30,7 @@ export default class Game {
 			KEYS.a,
 			KEYS.z
 		);
+
 		this.player2 = new Paddle(
 			this.height,
 			this.paddleWidth,
@@ -52,7 +51,7 @@ export default class Game {
 			this.radius / 2,
 			this.width,
 			this.height,
-		)
+		);
 
 		this.score1 = new Score(this.width / 2 - 60, 40, 30);
 
@@ -65,6 +64,7 @@ export default class Game {
 					break;
 			}
 		});
+		
 
 	}
 
@@ -87,7 +87,10 @@ export default class Game {
 		this.ball.render(svg, this.player1, this.player2);
 		this.score1.render(svg, this.player1.score);
 		this.score2.render(svg, this.player2.score);
-		this.ball2.render(svg, this.player1, this.player2);
+
+		if (this.player1.score >= 8 || this.player2.score >= 8) {
+			this.ball2.render(svg, this.player1, this.player2);
+		}
 
 	}
 
