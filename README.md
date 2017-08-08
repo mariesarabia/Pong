@@ -34,9 +34,9 @@ TECHNOLOGIES USED:
 
 In this project I learned:
 
-- The use of SVG to render the game objects: Board, Paddle, Ball, Score. 
+- Rendering game objects: Board, Paddle, Ball, Score, using dynamically generated SVGs using ES.next classes
 
-- Writing javascript in an object-oriented style using classes.
+- Writing javascript in an object-oriented style
 
 - The use of default import and export.
 

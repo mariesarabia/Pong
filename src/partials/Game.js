@@ -88,7 +88,7 @@ export default class Game {
 		this.score1.render(svg, this.player1.score);
 		this.score2.render(svg, this.player2.score);
 
-		if ((this.player1.score >= 8 && this.player1.score <= 20) || (this.player2.score >= 8) && (this.player1.score <= 20)) {
+		if ((this.player1.score >= 8 && this.player1.score <= 20) || (this.player2.score >= 8 && this.player1.score <= 20)) {
 			this.ball2.render(svg, this.player1, this.player2);
 		}
 
