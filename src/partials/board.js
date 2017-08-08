@@ -12,7 +12,9 @@ export default class Board {
         let rect = document.createElementNS(SVG_NS, 'rect');
         rect.setAttributeNS(null, 'width', this.width);
         rect.setAttributeNS(null, 'height', this.height);
-        rect.setAttributeNS(null, 'fill', '#003FBA');
+        rect.setAttributeNS(null, 'fill', '#446558');
+        rect.setAttributeNS(null, 'stroke', '#fff');
+        rect.setAttributeNS(null, 'stroke-width', '10');
         svg.appendChild(rect);
 
         let line = document.createElementNS(SVG_NS, 'line');
@@ -22,7 +24,7 @@ export default class Board {
         line.setAttributeNS(null, 'y2', '0');
         line.setAttributeNS(null, 'stroke', 'white');
         line.setAttributeNS(null, 'stroke-width', '3');
-        line.setAttributeNS(null, 'stroke-dasharray', '5, 5');
+        line.setAttributeNS(null, 'stroke-dasharray', '8, 5');
         svg.appendChild(line);
 
     }

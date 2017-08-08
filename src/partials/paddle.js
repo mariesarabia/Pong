@@ -21,6 +21,7 @@ export default class Paddle {
                     break;
             }
         });
+        
     }
 
     coordinates(x, y, width, height) {

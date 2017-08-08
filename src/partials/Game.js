@@ -17,7 +17,12 @@ export default class Game {
 
 		this.radius = 8;
 
-		this.board = new Board(this.width, this.height);
+		// this.points = 60, 30, 90, 90, 30, 90;
+
+		this.board = new Board(
+			this.width,
+			this.height);
+
 		this.player1 = new Paddle(
 			this.height,
 			this.paddleWidth,
@@ -36,23 +41,22 @@ export default class Game {
 			KEYS.up,
 			KEYS.down
 		);
+
 		this.ball = new Ball(
 			this.radius,
 			this.width,
 			this.height
 		);
-		//stretch
+
 		this.ball2 = new Ball(
-			this.radius,
+			this.radius / 2,
 			this.width,
-			this.height
-		);
-		//stretch
+			this.height,
+		)
 
-		this.score1 = new Score(this.width / 2 - 60, 30, 30);
+		this.score1 = new Score(this.width / 2 - 60, 40, 30);
 
-		this.score2 = new Score(this.width / 2 + 20, 30, 30);
-
+		this.score2 = new Score(this.width / 2 + 20, 40, 30);
 
 		document.addEventListener('keydown', event => {
 			switch (event.key) {
@@ -61,6 +65,7 @@ export default class Game {
 					break;
 			}
 		});
+
 	}
 
 	render() {
@@ -80,11 +85,10 @@ export default class Game {
 		this.player1.render(svg);
 		this.player2.render(svg);
 		this.ball.render(svg, this.player1, this.player2);
-		//stretch 
-		this.ball2.render(svg, this.player1, this.player2);
-		//stretch
 		this.score1.render(svg, this.player1.score);
 		this.score2.render(svg, this.player2.score);
+		this.ball2.render(svg, this.player1, this.player2);
+
 	}
 
 }
