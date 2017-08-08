@@ -27,10 +27,10 @@ Player 2:
 
 TECHNOLOGIES USED: 
 
-HTML
-CSS
-Javascript
-Webpack as bundler
+- HTML
+- CSS
+- Javascript
+- Webpack
 
 In this project I learned:
 
@@ -42,6 +42,6 @@ In this project I learned:
 
 - The use of Constructor class and methods.
 
-- Instatiating new objects using New.
+- Instantiating new objects using New.
 
 
